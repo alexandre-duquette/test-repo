@@ -1,0 +1,19 @@
+name: go to url
+
+on:
+  push:      
+    
+jobs:
+  go-to-url:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out the repository
+        uses: actions/checkout@v2
+      - name: Get tests la cap
+        id: get-tests-lacap
+        run: |
+          wget https://nova-acpt.dev1.wwws.lacapitale.com/
+      - name: Get tests sesison
+        id: get-tests-session
+        run: |
+          wget https://nova-acpt.dev1.session.beneva.ca/
